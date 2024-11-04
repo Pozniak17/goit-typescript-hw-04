@@ -3,15 +3,20 @@ import TodoItem from "./Components/TodoItem";
 import AddTodoForm from "./Components/AddTodoForm";
 import "./App.css";
 
-function App() {
-  const [todos, setTodos] = useState([]);
+interface Task {
+  id: number;
+  text: string;
+}
 
-  const addTodo = (text) => {
+function App() {
+  const [todos, setTodos] = useState<Task[]>([]);
+
+  const addTodo = (text: string) => {
     const newTodo = { id: Date.now(), text };
     setTodos([...todos, newTodo]);
   };
 
-  const deleteTodo = (id) => {
+  const deleteTodo = (id: number) => {
     const newTodos = todos.filter((todo) => todo.id !== id);
     setTodos(newTodos);
   };
