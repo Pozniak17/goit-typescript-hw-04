@@ -3,7 +3,7 @@ import TodoItem from "./Components/TodoItem";
 import AddTodoForm from "./Components/AddTodoForm";
 import "./App.css";
 
-interface Task {
+export interface Task {
   id: number;
   text: string;
 }
